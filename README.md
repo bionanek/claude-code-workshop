@@ -5,7 +5,10 @@ needed to present.
 
 ## Presenting
 
-Open `slides.html` in any browser. That single file is fully self-contained - the CSS, the
+Live at **https://bionanek.github.io/claude-code-workshop/** - the root URL opens the deck, and
+`#20` on the end jumps straight to slide 20.
+
+Locally, open `slides.html` in any browser. That single file is fully self-contained - the CSS, the
 JavaScript and both images are inlined, so it works offline and from a local file path.
 
 Controls:
@@ -30,7 +33,8 @@ To rebuild after editing:
 python3 _build/gen_slides.py
 ```
 
-That rewrites `slides.html` in the repo root. Python 3 with no third-party packages is all it needs.
+That rewrites `slides.html` in the repo root. `index.html` is a permanent one-line redirect to it
+for GitHub Pages and is not generated, so it never needs touching. Python 3 with no third-party packages is all it needs.
 
 Notes on the source:
 
