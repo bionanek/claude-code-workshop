@@ -814,9 +814,9 @@ add("M2", "The events - and where a hook can say no", """
   }
 }</pre>
 <p class="sub2" style="text-align:left"><b>A matcher and a command.</b> That is the whole thing. The script gets the tool call on stdin as JSON, so it can read which file was just written. (Prefix the path with <code>${CLAUDE_PROJECT_DIR}/</code> if it has to work from any directory.)</p>
-<p class="sub2" style="text-align:left"><b>Exit 0 lets it through. Exit 2 blocks</b>, and whatever the script printed to stderr goes to Claude as the reason. That is the entire contract.</p>
+<p class="sub2" style="text-align:left"><b>Exit 0 lets it through. Exit 2 refuses</b>, and whatever the script printed to stderr goes to Claude as the reason. <b>What &ldquo;refuses&rdquo; means depends on the event</b> - four of the six above can block; <code>PostToolUse</code> cannot, because the tool has already run, so Claude just gets told.</p>
 </div></div>
-<div class="takeaway"><b>The one thing worth getting right is where a hook can say no.</b> <span class="ok">PreToolUse</span> blocks the call before it happens and <span class="ok">Stop</span> blocks the turn from ending. <b><span class="no">PostToolUse</span> cannot block anything</b> - the tool already ran, so it can fix and it can complain, but it can never prevent. If the rule must hold, it goes on the event that fires <i>first</i>.</div></div>""")
+<div class="takeaway"><b>The one thing worth getting right is which events can say no.</b> <span class="ok">PreToolUse</span> blocks the call, <span class="ok">UserPromptSubmit</span> blocks the prompt outright, <span class="ok">PreCompact</span> blocks the compaction, and <span class="ok">Stop</span> refuses to let the turn end. <b><span class="no">PostToolUse</span> cannot block anything</b> - the tool already ran, so it can fix and it can complain, but it can never prevent. If the rule must hold, put it on an event that can refuse, and one that fires <i>before</i> the thing you want to stop.</div></div>""")
 
 add("M2", "Setting permissions for your agents", """
 <div class="c"><p class="kick">Setting permissions for your agents</p>
