@@ -5,8 +5,9 @@ needed to present.
 
 ## Presenting
 
-Live at **http://jakurbix.me/claude-code-workshop/** - the root URL opens the deck, and
-`#20` on the end jumps straight to slide 20.
+Published via GitHub Pages at **http://jakurbix.me/claude-code-workshop/** - the root URL opens
+the deck, and `#20` on the end jumps straight to slide 20. (`bionanek.github.io/claude-code-workshop/`
+redirects there, because the account's Pages custom domain applies to every project site.)
 
 Locally, open `slides.html` in any browser. That single file is fully self-contained - the CSS, the
 JavaScript and both images are inlined, so it works offline and from a local file path.
