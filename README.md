@@ -5,7 +5,7 @@ needed to present.
 
 ## Presenting
 
-Live at **https://bionanek.github.io/claude-code-workshop/** - the root URL opens the deck, and
+Live at **http://jakurbix.me/claude-code-workshop/** - the root URL opens the deck, and
 `#20` on the end jumps straight to slide 20.
 
 Locally, open `slides.html` in any browser. That single file is fully self-contained - the CSS, the
